@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="es-COL">
+  <!-- Cabeza de la página, caracteres, titulo, estilos -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JDigital</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <!-- Cuerpo de la página -->
+  <body>
+    <!-- Encabezado: nombre de la empresa y una pequeña descripción -->
+    <header>
+      <div class="container">
+        <h1>JDigital</h1>
+        <p>
+          Empresa de diseño y desarrollo de software a medida. Nos
+          especializamos en crear soluciones digitales innovadoras que impulsan
+          el crecimiento de tu negocio.
+        </p>
+      </div>
+      <br />
+      <hr />
+      <br />
+    </header>
+    <!-- Contenido principal de la empresa: Se dividio en secciones para mayor control de la información 
+      - Introducción
+      - Servicios 
+      - Contacto -->
+    <main>
+      <section id="intro-empresa">
+        <div class="container">
+          <!-- Uso de contenedores para organizar el contenido -->
+          <h2>MISIÓN</h2>
+          <p>
+            Nuestra misión es proporcionar soluciones tecnológicas
+            personalizadas que satisfagan las necesidades únicas de cada
+            cliente, utilizando las últimas tecnologias disponibles en el
+            mercado.
+          </p>
+        </div>
+        <br />
+        <div class="container">
+          <h2>VISIÓN</h2>
+          <p>
+            Ser reconocidos como líderes en el desarrollo de software a medida,
+            destacándonos por nuestra innovación, calidad y compromiso con la
+            satisfacción del cliente.
+          </p>
+        </div>
+        <br />
+        <hr />
+      </section>
+
+      <section id="servicios-empresa">
+        <div class="container">
+          <h2>Nuestros servicios</h2>
+          <div class="galeria-servicios">
+            <article id="servicio-1">
+              <img
+                src="img/SE-imagen-1.png"
+                alt="Diseño de landing page en monitor de escritorio"
+              />
+              <h3>Landing Page</h3>
+              <p>
+                Ofrecemos diseño y desarrollo de landing pages personalizadas
+                para captar leads y aumentar conversiones.
+              </p>
+              <p><strong>Tiempo de implementación:</strong> 1-2 semanas.</p>
+              <p><strong>Precio:</strong> $1,250</p>
+            </article>
+            <article id="servicio-2">
+              <img src="img/SE-imagen-2.jpg" alt="E-commerce" />
+              <h3>E-commerce Personalizado</h3>
+              <p>
+                Desarrollo de tiendas en línea seguras con pasarelas de pago
+                integradas y gestión de inventario automatizada.
+              </p>
+              <p><strong>tiempo de implementación:</strong> 3-4 semanas.</p>
+              <p><strong>Precio:</strong> $3,500</p>
+            </article>
+            <article id="servicio-3">
+              <img src="img/SE-imagen-3.webp" alt="Servicio 3" />
+              <h3>Aplicaciones Web (SaaS)</h3>
+              <p>
+                Plataformas en la nube escalables y sistemas de gestión a medida
+                para optimizar procesos empresariales.
+              </p>
+              <p><strong>Tiempo de implementación:</strong> 8-12 semanas.</p>
+              <p><strong>Precio:</strong> $5,000</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <br />
+      <hr />
+      <br />
+      <section id="contacto">
+        <div class="container">
+          <h2>¿Por qué elegirnos?</h2>
+          <ul>
+            <li>Soluciones personalizadas adaptadas a tus necesidades.</li>
+            <li>Equipo de expertos en las últimas tecnologías.</li>
+            <li>Compromiso con la calidad y la satisfacción del cliente.</li>
+            <li>Soporte continuo y mantenimiento post-lanzamiento.</li>
+          </ul>
+          <br />
+          <h2>Contáctanos</h2>
+          <p>Déjanos tus datos y nos pondremos en contacto contigo.</p>
+          <br />
+          <!-- Formulario de contacto -->
+          <form action="#" method="post">
+            <!-- Contenedores para cada campo del formulario. -->
+            <div class="campo-formulario-nombre">
+              <label for="nombre">Nombre completo:</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Ej: Juan Pérez"
+                required
+              />
+            </div>
+            <br />
+
+            <div class="campo-formulario-email">
+              <label for="email">Correo electrónico:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="nombre@empresa.com"
+                required
+              />
+            </div>
+            <br />
+
+            <div class="campo-formulario-mensaje">
+              <label for="mensaje">Tu mensaje:</label>
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                rows="5"
+                placeholder="Describe tu proyecto o duda aquí..."
+                required
+              ></textarea>
+            </div>
+            <br />
+            <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+          </form>
+          <br />
+        </div>
+        <hr />
+      </section>
+    </main>
+    <hr />
+    <!-- Pie de página con derechos reservados y enlaces a redes sociales -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2026 JDigital. Todos los derechos reservados.</p>
+
+        <nav class="social-links">
+          <a
+            href="https://github.com/JUANDELUQUEZ"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          <a
+            href="https://www.linkedin.com/in/juan-deluquez/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a
+            href="https://www.instagram.com/juandlz__/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Instagram</a
+          >
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

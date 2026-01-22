@@ -1,0 +1,186 @@
+/* -----------------------------------------------------------
+   HOJA DE ESTILOS PRINCIPAL - JDIGITAL
+   Descripción: Estilos globales, layout grid y componentes.
+----------------------------------------------------------- */
+
+/* 1. VARIABLES GLOBALES (CUSTOM PROPERTIES) */
+/* Centralización de colores y medidas para consistencia y mantenimiento */
+:root {
+  /* Paleta de Colores */
+  --bg-principal: #222831; /* Fondo oscuro principal */
+  --bg-secundario: #393e46; /* Fondo secundario (tarjetas/secciones) */
+  --color-acento: #948979; /* Color de énfasis (botones/bordes) */
+  --texto-principal: #dfd0b8; /* Color de texto primario */
+  --texto-blanco: #ffffff; /* Color para títulos destacados */
+
+  /* Variables de Layout */
+  --ancho-maximo: 1200px; /* Ancho máximo del contenedor */
+  --fuente-principal: system-ui, -apple-system, sans-serif;
+}
+
+/* 2. RESET Y NORMALIZACIÓN */
+/* Eliminación de márgenes por defecto y ajuste del modelo de caja */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+}
+
+/* 3. ESTILOS BASE */
+body {
+  background-color: var(--bg-principal);
+  color: var(--texto-principal);
+  font-family: var(--fuente-principal);
+  line-height: 1.6; /* Altura de línea para legibilidad */
+}
+
+/* 4. LAYOUT / UTILIDADES */
+/* Contenedor principal para centrado de contenido */
+.container {
+  width: 90%;
+  max-width: var(--ancho-maximo);
+  margin: 0 auto; /* Centrado horizontal automático */
+}
+
+/* 5. COMPONENTE: GALERÍA DE SERVICIOS */
+.galeria-servicios {
+  display: grid;
+  /* Grid responsivo: ajusta columnas automáticamente según el espacio disponible */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem; /* Espaciado entre celdas */
+  margin-top: 2rem;
+}
+
+/* Tarjetas de servicio (Cards) */
+.galeria-servicios article {
+  background-color: var(--bg-secundario);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease; /* Transición suave para hover */
+}
+
+/* Efecto Hover en tarjetas */
+.galeria-servicios article:hover {
+  transform: translateY(-5px); /* Elevación visual */
+}
+
+/* Imágenes dentro de las tarjetas */
+.galeria-servicios img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Mantiene la relación de aspecto sin deformar */
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/* Tipografía de tarjetas */
+.galeria-servicios h3 {
+  color: var(--texto-blanco);
+  margin-bottom: 1rem;
+}
+
+.galeria-servicios p {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 6. COMPONENTE: FORMULARIO DE CONTACTO */
+#contacto form {
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: var(--bg-secundario);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedores de campo */
+.campo-formulario-nombre,
+.campo-formulario-email,
+.campo-formulario-mensaje {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+/* Etiquetas (Labels) */
+label {
+  display: block; /* Comportamiento de bloque para ocupar línea propia */
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--texto-principal);
+}
+
+/* Campos de entrada (Inputs y Textarea) */
+input,
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background-color: var(--bg-principal);
+  color: var(--texto-blanco);
+  font-family: inherit;
+}
+
+/* Estado Focus (Accesibilidad y UX) */
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-acento);
+  box-shadow: 0 0 5px rgba(148, 137, 121, 0.5); /* Indicador visual de foco */
+}
+
+/* Botón de acción */
+.btn-enviar {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--color-acento);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover {
+  background-color: #7a6e5d; /* Oscurecimiento al pasar el cursor */
+}
+
+/* 7. MEDIA QUERIES (RESPONSIVE DESIGN) */
+/* Ajustes para dispositivos móviles y tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Optimización de espacio lateral */
+  .container {
+    width: 95%;
+  }
+
+  /* Ajuste de tipografía para pantallas pequeñas */
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  /* Stack vertical para la galería */
+  .galeria-servicios {
+    grid-template-columns: 1fr; /* Una sola columna */
+    gap: 1.5rem;
+  }
+
+  /* Ajustes de espaciado en formulario */
+  #contacto form {
+    padding: 1.5rem;
+    margin: 1rem auto;
+  }
+
+  /* Ajuste visual de imágenes */
+  .galeria-servicios img {
+    height: 250px;
+  }
+}
