@@ -1,0 +1,184 @@
+/* 1. VARIABLES GLOBALES */
+/* Definimos la paleta en un solo lugar para mantenimiento facil y agil */
+:root {
+  /* Tu Paleta */
+  --bg-principal: #222831; /* El más oscuro para el fondo general */
+  --bg-secundario: #393e46; /* Gris azulado para tarjetas o secciones */
+  --color-acento: #948979; /* Dorado/Café para botones o destacados */
+  --texto-principal: #dfd0b8; /* Crema para el texto legible */
+  --texto-blanco: #ffffff; /* Para títulos que necesiten extra brillo */
+
+  /* Configuraciones de Layout */
+  --ancho-maximo: 1200px; /* El "tope" de ancho para tu margen central */
+  --fuente-principal: system-ui, -apple-system, sans-serif; /* Fuente moderna */
+}
+
+/* 2. RESET BÁSICO */
+/* Quitamos los estilos basura del navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Vital para que el padding no deforme las cajas */
+}
+
+/* 3. ESTILOS BASE */
+body {
+  background-color: var(--bg-principal);
+  color: var(--texto-principal);
+  font-family: var(--fuente-principal);
+  line-height: 1.6; /* Mejor legibilidad */
+}
+
+/* CLASE DE CONTENEDOR CENTRAL */
+/* Esta clase la usaremos en el Header, Main y Footer para alinearlos */
+.container {
+  width: 90%; /* Ocupa el 90% en móviles */
+  max-width: var(
+    --ancho-maximo
+  ); /* Pero nunca pases de 1200px en pantallas grandes */
+  margin: 0 auto; /* Mágico: 0 arriba/abajo, AUTO a los lados (centrado) */
+}
+
+/* --- ESTILOS DE LA GALERÍA (GRID) --- */
+.galeria-servicios {
+  display: grid;
+  /* La magia: Crea columnas automáticas. 
+     Si caben 3, pone 3. Si la pantalla es pequeña, baja a 2 o 1. */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem; /* Espacio limpio entre tarjetas (adiós <hr>) */
+  margin-top: 2rem;
+}
+
+/* --- ESTILOS DE LAS TARJETAS (Articles) --- */
+.galeria-servicios article {
+  background-color: var(--bg-secundario);
+  padding: 2rem;
+  border-radius: 8px; /* Bordes suaves */
+  text-align: center; /* Contenido centrado */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+  transition: transform 0.3s ease;
+}
+
+.galeria-servicios article:hover {
+  transform: translateY(-5px); /* Micro-interacción profesional */
+}
+
+/* Control de imágenes para que no rompan la tarjeta */
+.galeria-servicios img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Recorta la imagen para que encaje perfecto sin estirarse */
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/* Tipografía dentro de las tarjetas */
+.galeria-servicios h3 {
+  color: var(--texto-blanco);
+  margin-bottom: 1rem;
+}
+
+.galeria-servicios p {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+/* --- ESTILOS DEL FORMULARIO DE CONTACTO --- */
+#contacto form {
+  max-width: 600px; /* Que no se estire demasiado en pantallas grandes */
+  margin: 2rem auto; /* Centrado horizontalmente */
+  background-color: var(--bg-secundario);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para los contenedores de cada campo (divs) */
+.campo-formulario-nombre,
+.campo-formulario-email,
+.campo-formulario-mensaje {
+  margin-bottom: 1.5rem; /* Espacio entre filas */
+  text-align: left; /* Alineamos etiquetas a la izquierda */
+}
+
+/* Estilo de las etiquetas (Labels) */
+label {
+  display: block; /* Para que ocupe su propia línea */
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--texto-principal);
+}
+
+/* Estilo de los Inputs y Textarea */
+input,
+textarea {
+  width: 100%; /* Ocupan todo el ancho del contenedor */
+  padding: 0.8rem;
+  border-radius: 4px;
+  border: 1px solid #555; /* Borde sutil */
+  background-color: var(--bg-principal); /* Fondo oscuro para el input */
+  color: var(--texto-blanco); /* Texto claro al escribir */
+  font-family: inherit; /* Hereda la fuente de la página */
+}
+
+/* Efecto cuando el usuario hace clic en el campo (Focus) */
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-acento); /* Se ilumina con el color dorado */
+  box-shadow: 0 0 5px rgba(148, 137, 121, 0.5);
+}
+
+/* Estilo del Botón de Enviar */
+.btn-enviar {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--color-acento);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover {
+  background-color: #7a6e5d; /* Un poco más oscuro al pasar el mouse */
+}
+
+/* --- RESPONSIVE DESIGN (MÓVILES Y TABLETAS) --- */
+/* Esta regla se activa solo si la pantalla mide 768px o menos */
+@media (max-width: 768px) {
+  /* 1. Aprovechar más espacio lateral */
+  .container {
+    width: 95%; /* En móvil, el margen del 90% es mucho desperdicio */
+  }
+
+  /* 2. Ajustar la tipografía (para que no se coma la pantalla) */
+  h1 {
+    font-size: 2.5rem; /* Reducimos el tamaño del título principal */
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  /* 3. Controlar la Galería */
+  .galeria-servicios {
+    /* Forzamos 1 sola columna para asegurar lectura vertical */
+    grid-template-columns: 1fr;
+    gap: 1.5rem; /* Reducimos el espacio entre tarjetas */
+  }
+
+  /* 4. Ajustar el Formulario */
+  #contacto form {
+    padding: 1.5rem; /* Menos relleno interno */
+    margin: 1rem auto;
+  }
+
+  /* 5. Ajustar Imágenes de Servicios */
+  .galeria-servicios img {
+    height: 250px; /* Un poco más altas para destacar en móvil */
+  }
+}
