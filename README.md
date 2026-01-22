@@ -8,9 +8,9 @@
 - [Descripción](#descripción)
 - [Características](#características)
 - [Tecnologías Utilizadas](#tecnologías-utilizadas)
-- [Estructura del Proyecto](#estructura-del-proyecto)
-- [Instalación y Uso](#instalación-y-uso)
 - [Autor](#autor)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+
 
 ## Descripción
 El objetivo principal de este proyecto fue construir una interfaz web robusta y adaptable desde cero, sin depender de frameworks externos. La página incluye secciones informativas (Misión/Visión), una galería de servicios interactiva y un formulario de contacto funcional y accesible.
@@ -42,7 +42,7 @@ El objetivo principal de este proyecto fue construir una interfaz web robusta y 
 
 ## Autor
 - Juan Jose Deluquez Hernandez
-- GitHub: @JUANDELUQUEZ[ASDF]
+- GitHub: @JUANDELUQUEZ
 
 ## Estructura del Proyecto
 ```text
