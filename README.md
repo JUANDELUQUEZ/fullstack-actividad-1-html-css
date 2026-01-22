@@ -40,6 +40,10 @@ El objetivo principal de este proyecto fue construir una interfaz web robusta y 
 - **Git & GitHub:** Control de versiones y flujo de trabajo (GitFlow).
 - **VS Code:** Editor de código.
 
+## Autor
+- Juan Jose Deluquez Hernandez
+- GitHub: @JUANDELUQUEZ[ASDF]
+
 ## Estructura del Proyecto
 ```text
 /
