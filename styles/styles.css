@@ -1,24 +1,29 @@
-/* 1. VARIABLES GLOBALES  s*/
-/* Definimos la paleta en un solo lugar para mantenimiento facil y agil */
-:root {
-  /* Tu Paleta */
-  --bg-principal: #222831; /* El más oscuro para el fondo general */
-  --bg-secundario: #393e46; /* Gris azulado para tarjetas o secciones */
-  --color-acento: #948979; /* Dorado/Café para botones o destacados */
-  --texto-principal: #dfd0b8; /* Crema para el texto legible */
-  --texto-blanco: #ffffff; /* Para títulos que necesiten extra brillo */
+/* -----------------------------------------------------------
+   HOJA DE ESTILOS PRINCIPAL - JDIGITAL
+   Descripción: Estilos globales, layout grid y componentes.
+----------------------------------------------------------- */
 
-  /* Configuraciones de Layout */
-  --ancho-maximo: 1200px; /* El "tope" de ancho para tu margen central */
-  --fuente-principal: system-ui, -apple-system, sans-serif; /* Fuente moderna */
+/* 1. VARIABLES GLOBALES (CUSTOM PROPERTIES) */
+/* Centralización de colores y medidas para consistencia y mantenimiento */
+:root {
+  /* Paleta de Colores */
+  --bg-principal: #222831; /* Fondo oscuro principal */
+  --bg-secundario: #393e46; /* Fondo secundario (tarjetas/secciones) */
+  --color-acento: #948979; /* Color de énfasis (botones/bordes) */
+  --texto-principal: #dfd0b8; /* Color de texto primario */
+  --texto-blanco: #ffffff; /* Color para títulos destacados */
+
+  /* Variables de Layout */
+  --ancho-maximo: 1200px; /* Ancho máximo del contenedor */
+  --fuente-principal: system-ui, -apple-system, sans-serif;
 }
 
-/* 2. RESET BÁSICO */
-/* Quitamos los estilos basura del navegador */
+/* 2. RESET Y NORMALIZACIÓN */
+/* Eliminación de márgenes por defecto y ajuste del modelo de caja */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Vital para que el padding no deforme las cajas */
+  box-sizing: border-box; /* Incluye padding y borde en el ancho total */
 }
 
 /* 3. ESTILOS BASE */
@@ -26,53 +31,51 @@ body {
   background-color: var(--bg-principal);
   color: var(--texto-principal);
   font-family: var(--fuente-principal);
-  line-height: 1.6; /* Mejor legibilidad */
+  line-height: 1.6; /* Altura de línea para legibilidad */
 }
 
-/* CLASE DE CONTENEDOR CENTRAL */
-/* Esta clase la usaremos en el Header, Main y Footer para alinearlos */
+/* 4. LAYOUT / UTILIDADES */
+/* Contenedor principal para centrado de contenido */
 .container {
-  width: 90%; /* Ocupa el 90% en móviles */
-  max-width: var(
-    --ancho-maximo
-  ); /* Pero nunca pases de 1200px en pantallas grandes */
-  margin: 0 auto; /* Mágico: 0 arriba/abajo, AUTO a los lados (centrado) */
+  width: 90%;
+  max-width: var(--ancho-maximo);
+  margin: 0 auto; /* Centrado horizontal automático */
 }
 
-/* --- ESTILOS DE LA GALERÍA (GRID) --- */
+/* 5. COMPONENTE: GALERÍA DE SERVICIOS */
 .galeria-servicios {
   display: grid;
-  /* La magia: Crea columnas automáticas. 
-     Si caben 3, pone 3. Si la pantalla es pequeña, baja a 2 o 1. */
+  /* Grid responsivo: ajusta columnas automáticamente según el espacio disponible */
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem; /* Espacio limpio entre tarjetas (adiós <hr>) */
+  gap: 2rem; /* Espaciado entre celdas */
   margin-top: 2rem;
 }
 
-/* --- ESTILOS DE LAS TARJETAS (Articles) --- */
+/* Tarjetas de servicio (Cards) */
 .galeria-servicios article {
   background-color: var(--bg-secundario);
   padding: 2rem;
-  border-radius: 8px; /* Bordes suaves */
-  text-align: center; /* Contenido centrado */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
-  transition: transform 0.3s ease;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease; /* Transición suave para hover */
 }
 
+/* Efecto Hover en tarjetas */
 .galeria-servicios article:hover {
-  transform: translateY(-5px); /* Micro-interacción profesional */
+  transform: translateY(-5px); /* Elevación visual */
 }
 
-/* Control de imágenes para que no rompan la tarjeta */
+/* Imágenes dentro de las tarjetas */
 .galeria-servicios img {
   width: 100%;
   height: 200px;
-  object-fit: cover; /* Recorta la imagen para que encaje perfecto sin estirarse */
+  object-fit: cover; /* Mantiene la relación de aspecto sin deformar */
   border-radius: 4px;
   margin-bottom: 1rem;
 }
 
-/* Tipografía dentro de las tarjetas */
+/* Tipografía de tarjetas */
 .galeria-servicios h3 {
   color: var(--texto-blanco);
   margin-bottom: 1rem;
@@ -83,53 +86,53 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* --- ESTILOS DEL FORMULARIO DE CONTACTO --- */
+/* 6. COMPONENTE: FORMULARIO DE CONTACTO */
 #contacto form {
-  max-width: 600px; /* Que no se estire demasiado en pantallas grandes */
-  margin: 2rem auto; /* Centrado horizontalmente */
+  max-width: 600px;
+  margin: 2rem auto;
   background-color: var(--bg-secundario);
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para los contenedores de cada campo (divs) */
+/* Contenedores de campo */
 .campo-formulario-nombre,
 .campo-formulario-email,
 .campo-formulario-mensaje {
-  margin-bottom: 1.5rem; /* Espacio entre filas */
-  text-align: left; /* Alineamos etiquetas a la izquierda */
+  margin-bottom: 1.5rem;
+  text-align: left;
 }
 
-/* Estilo de las etiquetas (Labels) */
+/* Etiquetas (Labels) */
 label {
-  display: block; /* Para que ocupe su propia línea */
+  display: block; /* Comportamiento de bloque para ocupar línea propia */
   margin-bottom: 0.5rem;
   font-weight: bold;
   color: var(--texto-principal);
 }
 
-/* Estilo de los Inputs y Textarea */
+/* Campos de entrada (Inputs y Textarea) */
 input,
 textarea {
-  width: 100%; /* Ocupan todo el ancho del contenedor */
+  width: 100%;
   padding: 0.8rem;
   border-radius: 4px;
-  border: 1px solid #555; /* Borde sutil */
-  background-color: var(--bg-principal); /* Fondo oscuro para el input */
-  color: var(--texto-blanco); /* Texto claro al escribir */
-  font-family: inherit; /* Hereda la fuente de la página */
+  border: 1px solid #555;
+  background-color: var(--bg-principal);
+  color: var(--texto-blanco);
+  font-family: inherit;
 }
 
-/* Efecto cuando el usuario hace clic en el campo (Focus) */
+/* Estado Focus (Accesibilidad y UX) */
 input:focus,
 textarea:focus {
   outline: none;
-  border-color: var(--color-acento); /* Se ilumina con el color dorado */
-  box-shadow: 0 0 5px rgba(148, 137, 121, 0.5);
+  border-color: var(--color-acento);
+  box-shadow: 0 0 5px rgba(148, 137, 121, 0.5); /* Indicador visual de foco */
 }
 
-/* Estilo del Botón de Enviar */
+/* Botón de acción */
 .btn-enviar {
   width: 100%;
   padding: 1rem;
@@ -144,41 +147,40 @@ textarea:focus {
 }
 
 .btn-enviar:hover {
-  background-color: #7a6e5d; /* Un poco más oscuro al pasar el mouse */
+  background-color: #7a6e5d; /* Oscurecimiento al pasar el cursor */
 }
 
-/* --- RESPONSIVE DESIGN (MÓVILES Y TABLETAS) --- */
-/* Esta regla se activa solo si la pantalla mide 768px o menos */
+/* 7. MEDIA QUERIES (RESPONSIVE DESIGN) */
+/* Ajustes para dispositivos móviles y tablets (max-width: 768px) */
 @media (max-width: 768px) {
-  /* 1. Aprovechar más espacio lateral */
+  /* Optimización de espacio lateral */
   .container {
-    width: 95%; /* En móvil, el margen del 90% es mucho desperdicio */
+    width: 95%;
   }
 
-  /* 2. Ajustar la tipografía (para que no se coma la pantalla) */
+  /* Ajuste de tipografía para pantallas pequeñas */
   h1 {
-    font-size: 2.5rem; /* Reducimos el tamaño del título principal */
+    font-size: 2.5rem;
   }
 
   h2 {
     font-size: 1.8rem;
   }
 
-  /* 3. Controlar la Galería */
+  /* Stack vertical para la galería */
   .galeria-servicios {
-    /* Forzamos 1 sola columna para asegurar lectura vertical */
-    grid-template-columns: 1fr;
-    gap: 1.5rem; /* Reducimos el espacio entre tarjetas */
+    grid-template-columns: 1fr; /* Una sola columna */
+    gap: 1.5rem;
   }
 
-  /* 4. Ajustar el Formulario */
+  /* Ajustes de espaciado en formulario */
   #contacto form {
-    padding: 1.5rem; /* Menos relleno interno */
+    padding: 1.5rem;
     margin: 1rem auto;
   }
 
-  /* 5. Ajustar Imágenes de Servicios */
+  /* Ajuste visual de imágenes */
   .galeria-servicios img {
-    height: 250px; /* Un poco más altas para destacar en móvil */
+    height: 250px;
   }
 }
